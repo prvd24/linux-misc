@@ -1,0 +1,4 @@
+# > attached
+
+sudo tuned-adm profile balanced
+sudo tuned-adm active
