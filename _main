@@ -2,10 +2,15 @@ sudo sysctl -w kernel.sysrq=1
 
 sudo systemctl start firewalld ; sudo systemctl enable firewalld
 
+---
+
 sudo systemctl disable avahi-daemon.service avahi-daemon.socket cups.service cups.socket
 sudo systemctl stop avahi-daemon.service avahi-daemon.socket cups.service cups.socket
 
-sudo dnf remove passim 
+sudo dnf remove passim kmines kpat kmahjongg skanpage kdrc kmail krfb krdc neochat pimcommon neochat kdeconnectd
+sudo dnf autoremove -y
+
+---
 
 sudo fstrim / -v
 
@@ -56,4 +61,3 @@ sudo fc-cache -v
 
 
 sudo fwupdmgr upgrade
-
