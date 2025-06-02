@@ -1,7 +1,36 @@
 sudo sysctl -w kernel.sysrq=1
 
-sudo dnf remove passim
+sudo systemctl disable avahi-daemon.service avahi-daemon.socket cups.service cups.socket
+sudo systemctl stop avahi-daemon.service avahi-daemon.socket cups.service cups.socket
 
+sudo dnf remove passim 
 
-# installing package
-sudo rpm --install  --excludepath=/usr/lib/.build-id/ ./package.rpm
+sudo nano /etc/fstab
+  # add noatime to ext4
+
+sudo nano /usr/lib/systemd/system/fstrim.timer
+    # OnCalendar=daily
+
+sudo nano /etc/sysctl.d/network.conf
+    net.ipv4.conf.default.rp_filter = 1
+    net.ipv4.conf.all.rp_filter = 1
+    net.ipv4.conf.default.accept_source_route = 0
+    net.ipv4.conf.all.accept_source_route = 0
+    net.ipv4.tcp_syncookies = 1
+    net.ipv4.tcp_max_syn_backlog = 4096
+    net.ipv4.icmp_echo_ignore_broadcasts = 1
+    net.ipv4.icmp_ignore_bogus_error_responses = 1
+    net.ipv4.conf.default.accept_redirects = 0
+    net.ipv4.conf.all.accept_redirects = 0
+    net.ipv6.conf.default.accept_redirects = 0
+    net.ipv6.conf.all.accept_redirects = 0
+    net.ipv4.conf.default.secure_redirects = 0
+    net.ipv4.conf.all.secure_redirects = 0
+    net.ipv4.conf.default.send_redirects = 0
+    net.ipv4.conf.all.send_redirects = 0
+    net.ipv4.ip_forward = 0
+    net.ipv6.conf.all.forwarding = 0
+    net.ipv6.conf.default.forwarding = 0
+
+sudo nano /usr/lib/sysctl.d/90-swap.conf
+    vm.swappiness=1
