@@ -1,0 +1,8 @@
+sudo dnf remove libfprint
+sudo dnf copr enable antiderivative/libfprint-tod-goodix-0.0.9
+sudo dnf update
+sudo dnf install libfprint-tod-goodix fprintd fprintd-pam
+sudo systemctl enable fprintd.service ; sudo systemctl restart fprintd
+fprintd-enroll
+sudo authselect enable-feature with-fingerprint
+sudo authselect apply-changes
