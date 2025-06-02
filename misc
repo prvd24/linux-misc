@@ -1,0 +1,1 @@
+sudo echo "options psmouse elantech_smbus=0" > /etc/modprobe.d/psmouse.conf
