@@ -47,3 +47,7 @@ sudo nano /etc/sysctl.d/network.conf
 sudo grubby --info=ALL
 sudo grubby --args="workqueue.power_efficient=true CONFIG_SND_SOC=y CONFIG_SND_SOC_AMD_ACP6x=y CONFIG_SND_SOC_AMD_YC_MACH=y" --update-kernel /boot/vmlinuz-6.<latest>
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg ; sudo grub2-mkconfig -o /etc/grub2.cfg
+
+---
+
+sudo fwupdmgr upgrade
