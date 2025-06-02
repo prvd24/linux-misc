@@ -1,15 +1,24 @@
 sudo sysctl -w kernel.sysrq=1
 
+sudo systemctl start firewalld ; sudo systemctl enable firewalld
+
 sudo systemctl disable avahi-daemon.service avahi-daemon.socket cups.service cups.socket
 sudo systemctl stop avahi-daemon.service avahi-daemon.socket cups.service cups.socket
 
 sudo dnf remove passim 
+
+sudo fstrim / -v
 
 sudo nano /etc/fstab
   # add noatime to ext4
 
 sudo nano /usr/lib/systemd/system/fstrim.timer
     # OnCalendar=daily
+
+sudo nano /usr/lib/sysctl.d/90-swap.conf
+    vm.swappiness=1
+
+---
 
 sudo nano /etc/sysctl.d/network.conf
     net.ipv4.conf.default.rp_filter = 1
@@ -32,5 +41,9 @@ sudo nano /etc/sysctl.d/network.conf
     net.ipv6.conf.all.forwarding = 0
     net.ipv6.conf.default.forwarding = 0
 
-sudo nano /usr/lib/sysctl.d/90-swap.conf
-    vm.swappiness=1
+
+---
+
+sudo grubby --info=ALL
+sudo grubby --args="workqueue.power_efficient=true CONFIG_SND_SOC=y CONFIG_SND_SOC_AMD_ACP6x=y CONFIG_SND_SOC_AMD_YC_MACH=y" --update-kernel /boot/vmlinuz-6.<latest>
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg ; sudo grub2-mkconfig -o /etc/grub2.cfg
