@@ -8,4 +8,11 @@ sudo perl -pi -e 's/(\xE8...\xFF)\x88(..\xBF\x30)/$1\xFE$2/g' /opt/master-pdf-ed
 
 sudo dnf install fedora-workstation-repositories
 # sudo dnf install google-chrome-stable
-sudo dnf install wireguard-tools
+sudo dnf install powertop wireguard-tools aria2 git p7zip p7zip-plugins python3-pip
+
+sudo powertop --auto-tune ; sudo systemctl enable powertop.service
+
+## misc
+# Filen
+# TickTick
+# Telegram
