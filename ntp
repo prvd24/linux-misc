@@ -1,0 +1,16 @@
+#timedatectl > https://forum.endeavouros.com/t/question-how-to-configure-linux-to-prefer-chrony-for-time-date-syncronization/45360
+sudo timedatectl set-local-rtc 0
+sudo timedatectl set-timezone Asia/Kolkata
+sudo timedatectl set-ntp true
+sudo systemctl restart systemd-timesyncd.service
+sudo timedatectl timesync-status
+sudo nano /usr/lib/systemd/ntp-units.d/80-systemd-timesync.list
+        SYSTEMD_TIMEDATED_NTP_SERVICES=chronyd.service:systemd-timesyncd.service
+        # keep only the above
+sudo nano /etc/chrony.conf
+        >attached
+sudo systemctl stop systemd-timesyncd.service ; sudo systemctl disable systemd-timesyncd.service
+sudo systemctl enable chronyd.service ; sudo systemctl start chronyd.service
+
+sudo timedatectl status
+sudo chronyc ntpdata | grep 'port'
