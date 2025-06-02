@@ -1,0 +1,21 @@
+sudo dnf -y install thinkfan
+sudo nano /etc/thinkfan.conf
+    tp_fan /proc/acpi/ibm/fan
+    hwmon /sys/class/hwmon/hwmon1/temp1_input
+    hwmon /sys/class/nvme/nvme0/hwmon3/temp1_input
+    # tpacpi: /proc/acpi/ibm/thermal
+    # tpacpi: /proc/acpi/ibm/fan
+    (0,     0,      47)
+    (1,     45,     50)
+    (3,     47,     55)
+    (5,     50,     60)
+    (6,     55,     65)
+    (7,     60,     12345)
+    # ("full-speed",     50,     12345)
+
+sudo echo "options thinkpad_acpi fan_control=1 experimental=1" | sudo tee /etc/modprobe.d/thinkfan.conf
+sudo modprobe -rv thinkpad_acpi
+sudo systemctl enable thinkfan
+# sudo systemctl disable thinkfan-sleep.service thinkfan-wakeup.service
+
+cat /proc/acpi/ibm/fan
