@@ -50,4 +50,10 @@ sudo grub2-mkconfig -o /boot/grub2/grub.cfg ; sudo grub2-mkconfig -o /etc/grub2.
 
 ---
 
+## install fonts
+sudo fc-cache -v
+# fc-match arial
+
+
 sudo fwupdmgr upgrade
+
