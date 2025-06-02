@@ -1,4 +1,7 @@
 sudo sysctl -w kernel.sysrq=1
 
+sudo dnf remove passim
+
+
 # installing package
 sudo rpm --install  --excludepath=/usr/lib/.build-id/ ./package.rpm
