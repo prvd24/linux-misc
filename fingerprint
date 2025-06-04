@@ -1,3 +1,5 @@
+https://download.copr.fedorainfracloud.org/results/antiderivative/libfprint-tod-goodix-0.0.9/
+
 sudo dnf remove libfprint
 sudo dnf copr enable antiderivative/libfprint-tod-goodix-0.0.9
 sudo dnf update
