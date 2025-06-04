@@ -34,12 +34,10 @@ user_pref("extensions.getAddons.showPane", false);
 user_pref("extensions.htmlaboutaddons.recommendations.enabled", false);
 user_pref("gfx.font_rendering.cleartype_params.enhanced_contrast", 1);
 user_pref("gfx.font_rendering.cleartype_params.rendering_mode", 5);
-user_pref("gfx.webrender.all", true);
 user_pref("media.memory_cache_max_size", 65536);
 user_pref("media.peerconnection.enabled", false);
 user_pref("middlemouse.paste", true);
 user_pref("network.captive-portal-service.enabled", false);
-user_pref("network.connectivity-service.DNS_HTTPS.domain", "freedns.controld.com");
 user_pref("network.connectivity-service.enabled", false);
 user_pref("network.connectivity-service.nat64-check", false);
 user_pref("network.dns.disablePrefetch", true);
@@ -57,11 +55,8 @@ user_pref("network.predictor.enabled", false);
 user_pref("network.predictor.enable-prefetch", false);
 user_pref("network.prefetch-next", false);
 user_pref("network.proxy.socks_remote_dns", true);
-user_pref("network.trr.custom_uri", "https://freedns.controld.com/x-adguard");
-user_pref("network.trr.default_provider_uri", "https://freedns.controld.com/x-adguard");
 user_pref("network.trr.disable-ECS", false);
 user_pref("network.trr.mode", 3);
-user_pref("network.trr.uri", "https://freedns.controld.com/x-adguard");
 user_pref("pdfjs.disabled", false);
 user_pref("pdfjs.enableScripting", false);
 user_pref("permissions.delegation.enabled", false);
@@ -92,44 +87,8 @@ user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.updatePing.enabled", false);
 user_pref("webchannel.allowObject.urlWhitelist", "");
 user_pref("network.notify.checkForProxies", false);
-user_pref("gfx.webrender.all", true);
-user_pref("gfx.webrender.fallback.software", false);
-user_pref("gfx.webrender.software.d3d11", false);
-
-
-// user_pref("dom.serviceWorkers.enabled", false);
-// user_pref("extensions.pocket.enabled", false);
-// user_pref("devtools.inspector.enabled", false);
-// user_pref("browser.cache.disk.smart_size.enabled", false);
-// https://addons.mozilla.org/en-US/firefox/addon/nicedarktheme/
-
-
-editor.singleLine.pasteNewlines	0
-clipboard.imageAsFile.enabled	false	
-widget.windows.sync-clipboard-flush	1
-widget.windows.mica
-
-
-gfx.webrender.quality.force-subpixel-aa-where-possible	true
-
-
-
-dom.security.https_first	true	
-dom.security.https_first_add_exception_on_failiure	false	
-dom.security.https_only_mode	true	
-dom.security.https_only_mode.upgrade_local	true	
-dom.security.https_only_mode_break_upgrade_downgrade_endless_loop	false	
-dom.security.https_only_mode_error_page_user_suggestions	true	
-dom.security.https_only_mode_ever_enabled	true	
-dom.security.https_only_mode_ever_enabled_pbm	true	
-dom.security.https_only_mode_pbm	true	
-dom.security.https_only_mode_send_http_background_request	false	
-dom.security.sanitizer.enabled	true	
-services.sync.prefs.sync-seen.dom.security.https_only_mode	true	
-services.sync.prefs.sync-seen.dom.security.https_only_mode_ever_enabled	true
-
-
-
-ui.elantech_gesture_hacks.enabled	0
-editor.singleLine.pasteNewlines	0
-
+user_pref("dom.serviceWorkers.enabled", false);
+user_pref("extensions.pocket.enabled", false);
+user_pref("devtools.inspector.enabled", false);
+user_pref("gfx.webrender.quality.force-subpixel-aa-where-possible", true);
+user_pref("dom.security.sanitizer.enabled", true);
