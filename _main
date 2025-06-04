@@ -4,11 +4,11 @@ sudo systemctl start firewalld ; sudo systemctl enable firewalld
 
 ---
 
-sudo systemctl disable avahi-daemon.service avahi-daemon.socket cups.service cups.socket
-sudo systemctl stop avahi-daemon.service avahi-daemon.socket cups.service cups.socket
+sudo systemctl disable avahi-daemon.service avahi-daemon.socket cups.service cups.socket postfix.service
+sudo systemctl stop avahi-daemon.service avahi-daemon.socket cups.service cups.socket postfix.service
 
-sudo dnf remove passim kmines kpat kmahjongg skanpage kdrc kmail krfb krdc neochat pimcommon neochat kdeconnectd
-sudo dnf autoremove -y
+sudo zypper remove passim kmines kpat kmahjongg skanpage kdrc kmail krfb krdc neochat pimcommon neochat kdeconnectd
+sudo zypper autoremove -y
 
 ---
 
