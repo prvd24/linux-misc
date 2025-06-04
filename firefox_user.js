@@ -55,8 +55,6 @@ user_pref("network.predictor.enabled", false);
 user_pref("network.predictor.enable-prefetch", false);
 user_pref("network.prefetch-next", false);
 user_pref("network.proxy.socks_remote_dns", true);
-user_pref("network.trr.disable-ECS", false);
-user_pref("network.trr.mode", 3);
 user_pref("pdfjs.disabled", false);
 user_pref("pdfjs.enableScripting", false);
 user_pref("permissions.delegation.enabled", false);
